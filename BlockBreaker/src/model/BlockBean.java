@@ -163,8 +163,8 @@ public class BlockBean {
 		return block;
 	}
 
-	public void setBlock(int[] block) {
-		this.block = block;
+	public void setBlock(int index) {
+		this.block[index] = 0;
 	}
 
 	public int[] getBlockx() {

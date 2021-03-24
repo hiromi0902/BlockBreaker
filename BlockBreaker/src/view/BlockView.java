@@ -15,17 +15,17 @@ import model.BlockBean;
 public class BlockView extends Frame implements ActionListener , MouseMotionListener{
 
 	//ブロック崩しの描画領域：BlockViewPanel
-	private BlockViewPanel BlockVP;
+	BlockViewPanel BlockVP;
 	//ブロック崩し制御用スレッド：BlockControl
-	private BlockControl BlockC ;
+	BlockControl BlockC ;
 	//開始ボタン：Button
-	private Button startButton;
+	Button startButton;
 	//終了ボタン：Button
-	private Button endButton;
+	Button endButton;
 	//リプレイボタン：Button
-	private Button rePlayButton ;
+	Button rePlayButton ;
 	//画像情報クラス：BlockBean ※インスタンス生成が必要
-	private BlockBean imageInfo ;
+	BlockBean imageInfo = new BlockBean();
 
 	//画像情報クラスだけsetter,getter用意
 	public BlockBean getImageInfo() {
@@ -36,7 +36,7 @@ public class BlockView extends Frame implements ActionListener , MouseMotionList
 	}
 
 	//コンストラクタ
-	public void drawView() {
+	public BlockView() {
 		//描写エリア,パネル設定
 		BlockViewPanel BlockVP = new BlockViewPanel();
 		BlockVP.setBackground(Color.black);
