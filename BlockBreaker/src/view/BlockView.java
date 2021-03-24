@@ -142,7 +142,7 @@ public class BlockView extends Frame implements ActionListener , MouseMotionList
 		//1
 		if(imageInfo.getBlockStatus()==0) {
 			imageInfo.setBlockStatus(1);
-			BlockC = new BlockControl(this);
+			BlockControl BlockC = new BlockControl(this);
 			BlockC.start();
 		}
 	}

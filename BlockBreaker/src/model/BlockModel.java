@@ -19,7 +19,7 @@ public class BlockModel {
 	//ラケットの横幅（引数1より退避）：int
 	int racketWidth = BBean.getRacketWidth();
 	//ラケットの縦幅（引数1より退避）：int
-	int racketyHeight = BBean.getRacketHeight();
+	int racketHeight = BBean.getRacketHeight();
 	//ブロック崩しの描画範囲の横幅（引数1より退避）：int
 	int blockImageWidth = BBean.getBlockImageWidth();
 	//ブロック崩しの描画範囲の縦幅（引数1より退避）：int
@@ -33,44 +33,44 @@ public class BlockModel {
 
 
 	//条①
-	if (BBean.getBallx() + BBean.getBallHeight() >= BBean.getRackety()
-				&& BBean.getBally() + BBean.getBallHeight() <= BBean.getRackety() + BBean.getRacketWidth()
-				&& BBean.getBallx() + BBean.getBallWidth() >= BBean.getRacketx()
-				&& BBean.getBallx() <= BBean.getRacketx() + BBean.getRacketWidth()){
+	if (bally + ballHeight >= rackety
+				&& bally + ballHeight <= rackety + racketHeight
+				&& ballx + ballWidth >= racketx
+				&& ballx <= racketx + racketWidth){
 			//上に返す
 			ballNexty = -2 ;
 		}
 	//条②
-		else if (BBean.getBallx() < BBean.getRacketx() || BBean.getBallx()
-				+ BBean.getBallWidth() > BBean.getRacketx() + BBean.getRacketWidth()){
+		else if (ballx < racketx ||
+				ballx + ballWidth > racketx + racketWidth){
 		}
 	//条③
-		else if (BBean.getBallNextx() == 0) {
+		else if (ballNextx == 0) {
 			//ボールは垂直に返す
 			ballNextx = 0 ;
 		}
 	//条④
-		else if (BBean.getBallNextx() < BBean.getRacketx()) {
+		else if (ballNextx < racketx) {
 			//左斜め上に返す
 			ballNextx = -2 ;
 		}
 	//条⑤
-		else if (BBean.getBallx() + BBean.getBallWidth() > BBean.getRacketx() + BBean.getBallWidth()) {
+		else if (ballx + ballWidth > racketx + racketWidth) {
 			//右斜め上に返す
 			ballNextx = 2 ;
 		}
 	//条⑥
-		if(BBean.getBallx() < 0) {
+		if(ballx < 0) {
 			//
 			ballNextx = 2 ;
 		}
 	//条⑦
-		else if(BBean.getBallx() + BBean.getBallWidth() > BBean.getBlockImageWidth()) {
+		else if(ballx + ballWidth > blockImageWidth) {
 			//反転
 			ballNextx = -2 ;
 		}
 	//条⑧
-		else if(BBean.getBally() < 0) {
+		else if(bally < 0) {
 			//反転
 			ballNextx = 2 ;
 
@@ -106,6 +106,7 @@ public class BlockModel {
 					BBean.setBallNextx(ballNextx);
 					BBean.setBallNexty(ballNexty);
 				}
+		return BBean;
 			}
 	}
 

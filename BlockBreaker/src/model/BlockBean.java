@@ -227,8 +227,8 @@ public class BlockBean {
 		return blocks;
 	}
 
-	public void setBlocks(int blocks) {
-		this.blocks = blocks;
+	public void setBlocks(int number) {
+		this.blocks = blocks+number;
 	}
 
 	public int getBlockStatus() {

@@ -10,7 +10,7 @@ public class BlockControl extends Thread{
 	BlockView BView ;
 	BlockBean BBean ;
 
-	public void constructor(BlockView v) {
+	public BlockControl(BlockView v) {
 		this.BView = v;//このクラスのビューに引数1の情報を代入
 		this.BBean = BView.getImageInfo();//このクラスのビーンにビューが保持しているビーンの情報を代入
 		this.BModel = new BlockModel();//このクラスのモデルをインスタンス生成
